@@ -20,5 +20,7 @@ RUN rm -rf /var/lib/apt/lists/*
 COPY ./requirements.txt ./
 RUN pip install -r requirements.txt
 
+COPY ./tests /srv/HW_CI_test/tests
+
 # Add the rest of the application
 ADD . ${WORKDIR}
