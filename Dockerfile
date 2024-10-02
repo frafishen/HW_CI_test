@@ -5,6 +5,9 @@ FROM python:3.10.11-bullseye as base
 ENV WORKDIR /srv/HW_CI_test
 WORKDIR ${WORKDIR}
 
+# Set the PYTHONPATH to include the 'src' directory
+ENV PYTHONPATH="${WORKDIR}/src"
+
 # Install necessary system dependencies
 RUN apt-get update
 RUN apt-get install -y wget unzip
