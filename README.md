@@ -27,3 +27,27 @@ docker exec -it HW_CI_test /bin/bash
 uvicorn src.main:app --host localhost --port 7877 --reload
 ```
 
+## Folder Structure
+```bash
+.
+├── Dockerfile
+├── Jenkinsfile
+├── README.md
+├── conftest.py
+├── docker-compose.yml
+├── pytest.ini
+├── requirements.txt
+├── src
+│   ├── app
+│   │   └── route.py
+│   └── main.py
+└── tests
+    ├── robot
+    │   └── api_test.robot
+    └── unit
+        ├── app
+        │   └── test_route.py
+        └── test_main.py
+
+12 directories, 17 files
+```
