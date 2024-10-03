@@ -2,11 +2,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('Build Docker Image') {
             steps {
                 script {
-                    // Build the Docker images
-                    sh 'docker-compose build'
+                    // Build the Docker image
+                    sh 'docker build -t my-python-dev-env .'
                 }
             }
         }
