@@ -1,17 +1,8 @@
 # HW_CI_test
 This template demonstrates how to use **FastAPI** as an API for continuous integration (CI) testing of the **ESP32**. It utilizes **Robot Framework** and **CoreMark** for testing.
 
-
-## Only testing
-
-Before proceeding, ensure that Docker is installed on your machine. To run the tests, use the following commands:
-
-```bash
-docker compose build
-
-docer compose run test
-```
-
+## Testing Report
+[Testing Report Shortcut](report/report.md)
 
 ## Launching the API Service Locally
 
