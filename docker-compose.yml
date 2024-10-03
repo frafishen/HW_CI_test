@@ -5,6 +5,6 @@ services:
     build: .
     image: my-python-dev-env
     ports:
-      - "7877:8777"
-    command: uvicorn src.main:app --host 0.0.0.0 --port 8777 --reload
+      - "7877:8000"
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
     container_name: HW_CI_test
