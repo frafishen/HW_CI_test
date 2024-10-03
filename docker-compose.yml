@@ -1,13 +1,10 @@
 version: '3.8'
-
 services:
-  HW_CI_test:
+  app:
+    platform: linux/arm64
+    build: .
     image: my-python-dev-env
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ./src:/srv/HW_CI_test/src
-      - ./tests:/srv/HW_CI_test/tests
     ports:
-      - "5000:5000"  # Change to your required port mapping
+      - "7877:8777"
+    command: uvicorn src.main:app --host 0.0.0.0 --port 8777 --reload
+    container_name: HW_CI_test

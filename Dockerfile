@@ -11,16 +11,9 @@ ENV PYTHONPATH="${WORKDIR}/src"
 # Install necessary system dependencies
 RUN apt-get update
 RUN apt-get install -y wget unzip
-RUN apt-get install -y ffmpeg
-RUN apt-get install -y flac
 RUN rm -rf /var/lib/apt/lists/*
 
-# Set up Python environment
-# Copy and install base dependencies
-COPY ./requirements.txt ./
-RUN pip install -r requirements.txt
-
-COPY ./tests /srv/HW_CI_test/tests
-
-# Add the rest of the application
+RUN mkdir -p ${WORKDIR}
 ADD . ${WORKDIR}
+
+RUN pip install -r requirements.txt

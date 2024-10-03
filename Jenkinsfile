@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image
-                    sh 'docker build -t my-python-dev-env .'
+                    sh 'docker-compose build'
                 }
             }
         }
@@ -21,8 +21,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    sh 'docker exec HW_CI_test ls'
                     sh 'docker exec HW_CI_test pytest -v'
-                    sh 'docker exec HW_CI_test pytest'
                 }
             }
         }
